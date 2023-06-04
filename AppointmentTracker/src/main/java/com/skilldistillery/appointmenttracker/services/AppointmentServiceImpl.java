@@ -1,6 +1,7 @@
 package com.skilldistillery.appointmenttracker.services;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -22,26 +23,29 @@ public class AppointmentServiceImpl implements AppointmentService {
 
 	@Override
 	public Appointment getAppointmentById(int appointmentId) {
-		// TODO Auto-generated method stub
-		return null;
+		return repo.findById(appointmentId);
 	}
 
 	@Override
 	public Appointment create(Appointment appointment) {
-		// TODO Auto-generated method stub
-		return null;
+		return repo.saveAndFlush(appointment);
 	}
 
 	@Override
-	public Appointment update(int appointmentId, Appointment appointment) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+    public Appointment update(int appointmentId, Appointment appointment) {
+        Appointment managed = repo.findById(appointmentId);
+        
+        if (managed != null) {
+        	managed.setName(appointment.getName());   	
+        	return repo.saveAndFlush(appointment);
+        }
+        return null;
+    }
 
 	@Override
 	public boolean delete(int appointmentId) {
-		// TODO Auto-generated method stub
-		return false;
+		repo.deleteById(appointmentId);
+        return !repo.existsById(appointmentId);
 	}
 
 }
