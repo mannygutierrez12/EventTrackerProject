@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Seeing Errors Lab</title>
+  <!-- Test Dependencies -->
+  <link href="https://cdn.rawgit.com/mochajs/mocha/2.2.5/mocha.css" rel="stylesheet" />
+  <script src="https://cdn.rawgit.com/mochajs/mocha/2.2.5/mocha.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/chai/3.5.0/chai.min.js"></script>
+  
+  <!-- Mocha Setup -->
+  <script>
+    mocha.setup('bdd');
+    var expect = chai.expect;
+  </script>
+  
+  <!-- JS file => edit this one -->
+  <script src="public/lab.js"></script>
+
+  <!-- test file => DO NOT EDIT -->
+  <script src="spec/labSpec.js"></script>
+  
+  <!-- run tests on load -->
+  <script>
+    window.addEventListener('load', mocha.run);
+  </script>
+</head>
+<body>
+  <div id="mocha"></div>
+</body>
+</html>
