@@ -187,10 +187,6 @@ function deleteAppointment(appointmentId) {
 
 
 
-  xhr.send();
-}
-
-
 
 
 function updateAppointment(appointmentId, updatedAppointment) {
