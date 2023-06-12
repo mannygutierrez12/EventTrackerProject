@@ -1,59 +1,90 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Appointment Tracker</title>
-<script type="text/javascript" src="JS/script.js"></script>
+  <meta charset="UTF-8">
+  <title>Appointment Tracker</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.2/css/bootstrap.min.css">
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    
+    .container {
+      text-align: center;
+    }
+    
+    form {
+      margin-bottom: 20px;
+    }
+    
+    #output {
+      margin-bottom: 20px;
+    }
+    
+    #appointmentData {
+      margin-bottom: 20px;
+    }
+  </style>
+  <script type="text/javascript" src="JS/script.js"></script>
 </head>
 <body>
-  <h1>Appointment Tracker</h1>
-  
-  
+  <div class="container">
+    <h1>Appointment Tracker</h1>
 
-  <form name="appointmentForm">
+
+<!--  <form name="appointmentForm">
     <input type="number" name="appointmentId">
     <button name="lookup">Get Appointment by Id</button>
-  </form>
-  
-  <div id="output">
-    <div id="appointmentData"></div>
-  </div>
-  
-  <div id="newAppointmentFormDiv">
-  	<hr>
-  	<form name="newAppointmentForm">
-  	
-  		<h3>Add a New Appointment</h3>
-  		<label for="name">Name</label>
-  		<input name="name" type="text"><br>
-  		<button name="addAppointmentButton">Add a Appointment</button>
-  	
-  	</form>
+  </form> -->
   
   
-  </div>
-  
-   <div id="updateDiv">
-  	<hr>
-  	<form name="updateAppointmentForm">
-  	
-  		<h3>Update Appointment By Id</h3>
-  		<label for="appointmentId">ID</label>
-  		<input name="appointmentId" type="text"><br>
-  		<button name="appointmentIdButton">Update Appointment</button>
-  	
-  	</form>
-  
-  
-  </div>
-  
-  <div id="appointmentDataDiv">
-	<form name="listAllAppointment">
-	
-		<h3>All Appointment By ID</h3>
-  		<input name="appointmentId" type="hidden"><br>
-	</form>
+    <form name="appointmentForm">
+      <div class="mb-3">
+        <input type="number" name="appointmentId" class="form-control" placeholder="Appointment ID">
+      </div>
+      <button type="button" name="lookup" class="btn btn-primary">Get Appointment by ID</button>
+    </form>
+
+    <div id="output">
+      <div id="appointmentData"></div>
+    </div>
+
+    <div id="newAppointmentFormDiv">
+      <hr>
+      <form name="newAppointmentForm">
+        <h3>Add a New Appointment</h3>
+        <div class="mb-3">
+          <label for="name">Name</label>
+          <input name="name" type="text" class="form-control">
+        </div>
+        <button type="button" name="addAppointmentButton" class="btn btn-primary">Add an Appointment</button>
+      </form>
+    </div>
+
+    <div id="updateDiv">
+      <hr>
+      <form name="updateAppointmentForm">
+        <h3>Update Appointment By ID</h3>
+        <div class="mb-3">
+          <label for="appointmentId">ID</label>
+          <input name="appointmentId" type="text" class="form-control">
+        </div>
+        <button type="button" name="appointmentIdButton" class="btn btn-primary">Update Appointment</button>
+      </form>
+    </div>
+
+    <div id="appointmentDataDiv">
+      <hr>
+      <form name="listAllAppointment">
+        <h3>All Appointment By ID</h3>
+        <input name="appointmentId" type="hidden">
+      </form>
+    </div>
   </div>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.2/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

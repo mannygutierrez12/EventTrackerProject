@@ -175,12 +175,17 @@ function deleteAppointment(appointmentId) {
       if (xhr.status === 204) {
         let appointment = JSON.parse(xhr.responseText);
         console.log("The Appointment was successfully deleted" + appointment);
-      
+        window.location.href = window.location.href; // Redirect to the current page
       } else {
         displayError("Appointment not found");
       }
     }
   };
+
+  xhr.send();
+}
+
+
 
   xhr.send();
 }
