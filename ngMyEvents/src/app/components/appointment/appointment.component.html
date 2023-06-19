@@ -1,0 +1,19 @@
+<h2>Welcome to the Appointment Tracker</h2>
+
+<div id="appointmentList">
+  <table>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Description</th>
+    </tr>
+
+    <tbody>
+      <tr *ngFor="let appointment of appointmentList">
+        <td>{{ appointment.id }}</td>
+        <td>{{ appointment.name }}</td>
+        <td>{{ appointment.description }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
